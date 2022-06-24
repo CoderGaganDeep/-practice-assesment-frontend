@@ -9,11 +9,11 @@ export const fetchSpaces = () => {
     try {
       const spacesCount = getState().spaces.allSpaces.length;
       const response = await axios.get(
-        `${apiUrl}/spaces?limit=${DEFAULT_PAGINATION_LIMIT}&offset=${spacesCount}`
+        `${apiUrl}/space?limit=${DEFAULT_PAGINATION_LIMIT}&offset=${spacesCount}`
       );
 
-      // console.log(response.data);
-      dispatch(fetchSpacesSuccess(response.data.spaces.rows));
+      console.log(response);
+      dispatch(fetchSpacesSuccess(response.data));
     } catch (e) {
       console.log(e.message);
     }

@@ -10,7 +10,7 @@ export const spacesSlice = createSlice({
   initialState,
   reducers: {
     fetchSpacesSuccess: (state, action) => {
-      state.allSpaces = [state.allSpaces, action.payload];
+      state.allSpaces = action.payload;
     },
   },
 });
