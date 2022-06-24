@@ -12,8 +12,12 @@ export const spacesSlice = createSlice({
     fetchSpacesSuccess: (state, action) => {
       state.allSpaces = action.payload;
     },
+    fetchSpaceByIdSuccess: (state, action) => {
+      state.spaceDetails = action.payload;
+    },
   },
 });
 
-export const { fetchSpacesSuccess } = spacesSlice.actions;
+export const { fetchSpacesSuccess, fetchSpaceByIdSuccess } =
+  spacesSlice.actions;
 export default spacesSlice.reducer;

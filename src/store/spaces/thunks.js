@@ -1,9 +1,8 @@
 import { apiUrl } from "../../config/constants";
 import axios from "axios";
-import { fetchSpacesSuccess } from "./slice";
-// export const FETCH_SPACES_SUCCESS = "FETCH_SPACES_SUCCESS";
-// export const SPACE_DETAILS_FETCHED = "SPACE_DETAILS_FETCHED";
+import { fetchSpacesSuccess, fetchSpaceByIdSuccess } from "./slice";
 
+//1. write a thunk to fetch all spaces
 export const fetchSpaces = () => {
   return async (dispatch, getState) => {
     try {
@@ -16,7 +15,7 @@ export const fetchSpaces = () => {
   };
 };
 
-//1. write a thunk to fetch space by id
+//2. write a thunk to fetch space by id
 export const fetchSpaceById = (id) => {
   return async (dispatch, getState) => {
     try {
@@ -26,6 +25,7 @@ export const fetchSpaceById = (id) => {
       console.log(response);
       //4. go to component and import this functions there
       //5. if you saw console.log, dispatch this action: dispatch(fetchSpacesSuccess(response.data));
+      dispatch(fetchSpaceByIdSuccess(response.data));
     } catch (e) {
       console.log(e.message);
     }

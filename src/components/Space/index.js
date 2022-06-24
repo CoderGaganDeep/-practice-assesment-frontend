@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Space(props) {
   return (
@@ -12,13 +12,17 @@ export default function Space(props) {
         backgroundColor: props.backgroundColor,
         color: props.color,
         width: "500px",
+        marginTop: 0,
+        marginBottom: 0,
+        marginLeft: "auto",
+        marginRight: "auto",
       }}
     >
       <h2>Title: {props.title}</h2>
       <p>Description: {props.description}</p>
-      <NavLink to={"/"}>
+      <Link to={`/space/${props.id}`}>
         <button>Visit Space</button>
-      </NavLink>
+      </Link>
     </div>
   );
 }
