@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function Space(props) {
+export default function MySpaceComponent(props) {
   return (
     <div
       style={{
@@ -13,7 +13,7 @@ export default function Space(props) {
         borderBlockColor: "ActiveBorder",
         backgroundColor: props.backgroundColor,
         color: props.color,
-        width: "500px",
+        width: "700px",
         marginTop: 0,
         marginBottom: 0,
         marginLeft: "auto",
@@ -22,11 +22,14 @@ export default function Space(props) {
         paddingBlockEnd: "10",
       }}
     >
-      <h2>Title: {props.title}</h2>
-      <p>Description: {props.description}</p>
+      <h1>This is My SPace from Component</h1>
+      <h4>Space:</h4>
       <Link to={`/space/${props.id}`}>
-        <button>Visit Space</button>
+        <button>Edit Space</button>
       </Link>
+      <h4>Story: ${props.name}</h4>
+      <p>Description: {props.content}</p>
+      <button>Post New Story</button> <button>Delete Story</button>
     </div>
   );
 }

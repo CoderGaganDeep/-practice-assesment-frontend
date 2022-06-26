@@ -16,7 +16,9 @@ export default function Spaces() {
 
   return (
     <>
-      <h1>Spaces from page</h1>
+      <h1 style={{ justifyContent: "center", textAlign: "center" }}>
+        Spaces from page
+      </h1>
 
       {spaces.map((space) => {
         return (

@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
-
-export default function Space(props) {
+const SpaceDetails = (props) => {
   return (
     <div
       style={{
@@ -13,20 +11,26 @@ export default function Space(props) {
         borderBlockColor: "ActiveBorder",
         backgroundColor: props.backgroundColor,
         color: props.color,
-        width: "500px",
+        width: "800px",
         marginTop: 0,
         marginBottom: 0,
         marginLeft: "auto",
         marginRight: "auto",
         padding: "40px",
         paddingBlockEnd: "10",
+        // border: "15px, solid, green",
+        //padding: "13px,40px",
       }}
+      key={props.id}
     >
-      <h2>Title: {props.title}</h2>
-      <p>Description: {props.description}</p>
-      <Link to={`/space/${props.id}`}>
-        <button>Visit Space</button>
-      </Link>
+      <h2>{props.name}</h2>
+      <p>{props.content}</p>
+      <img
+        style={{ flexDirection: "column-reverse" }}
+        src={props.imageUrl}
+        alt={props.name}
+      />
     </div>
   );
-}
+};
+export default SpaceDetails;
